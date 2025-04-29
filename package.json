@@ -1,0 +1,53 @@
+{
+  "name": "format-markdown-citation",
+  "displayName": "Format Markdown Citation",
+  "description": "Formats Markdown-style @key; citations into LaTeX \\\\cite{}.",
+  "version": "1.0.0",
+  "author": { "name": "Fabian Stoll" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabian-stoll/format-markdown-citation.git"
+  },
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "formatMarkdownCitation.format",
+        "title": "Format Markdown Citation"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "formatMarkdownCitation.format",
+        "key": "shift+alt+b",
+        "when": "editorTextFocus && editorHasSelection"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.99.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
